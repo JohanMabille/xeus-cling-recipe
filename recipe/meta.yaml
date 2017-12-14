@@ -12,7 +12,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win and py<35]
   features:   # [win]
     - vc14    # [win]
@@ -21,8 +21,8 @@ requirements:
   build:
     - toolchain
     - cmake
-    - cppzmq
-    - zeromq
+    - cppzmq 4.2.2
+    - zeromq 4.2.3
     - cryptopp
     - cling >=0.5,<0.6
     - xeus >=0.8.0,<0.9
@@ -30,10 +30,10 @@ requirements:
     - pugixml
     - cxxopts
   run:
-    - cppzmq             # Even though cppzmq is header-only, it is used at runtime by the interpreted c++
+    - cppzmq 4.2.2       # Even though cppzmq is header-only, it is used at runtime by the interpreted c++
     - xtl  >=0.3.6,<0.4  # Even though xtl is header-only, it is used at runtime by the interpreted c++
     - xeus >=0.8.0,<0.9
-    - zeromq
+    - zeromq 4.2.3
     - cryptopp
     - util-linux         # [linux]
     - cling  >=0.5,<0.6
